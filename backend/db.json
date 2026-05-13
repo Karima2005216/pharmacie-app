@@ -1,0 +1,564 @@
+{
+  "medicaments": [
+    {
+      "id": "1",
+      "nom": "Doliprane 1000mg",
+      "reference": "MED001",
+      "categorie": "Analgésique",
+      "prix": 12.5,
+      "quantite": 150,
+      "seuilAlerte": 20,
+      "dateExpiration": "2026-08-01",
+      "fournisseurId": "1",
+      "ordonnanceRequise": false,
+      "description": "Paracétamol contre la douleur et la fièvre"
+    },
+    {
+      "nom": "Amoxicilline 500mg",
+      "reference": "MED002",
+      "categorie": "Antibiotique",
+      "fournisseurId": "2",
+      "prix": 35,
+      "quantite": 20,
+      "seuilAlerte": 20,
+      "dateExpiration": "2025-06-15",
+      "description": "Antibiotique à large spectre",
+      "ordonnanceRequise": true,
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "nom": "Vitamine C 500mg",
+      "reference": "MED003",
+      "categorie": "Vitamines",
+      "prix": 18,
+      "quantite": 200,
+      "seuilAlerte": 30,
+      "dateExpiration": "2027-01-10",
+      "fournisseurId": "1",
+      "ordonnanceRequise": false,
+      "description": "Complément vitaminique"
+    },
+    {
+      "id": "4",
+      "nom": "Ibuprofène 400mg",
+      "reference": "MED004",
+      "categorie": "Anti-inflammatoire",
+      "prix": 22,
+      "quantite": 8,
+      "seuilAlerte": 15,
+      "dateExpiration": "2025-04-20",
+      "fournisseurId": "2",
+      "ordonnanceRequise": false,
+      "description": "Anti-inflammatoire non stéroïdien"
+    },
+    {
+      "id": "5",
+      "nom": "Metformine 850mg",
+      "reference": "MED005",
+      "categorie": "Antidiabétique",
+      "prix": 28,
+      "quantite": 80,
+      "seuilAlerte": 15,
+      "dateExpiration": "2026-12-01",
+      "fournisseurId": "3",
+      "ordonnanceRequise": true,
+      "description": "Traitement du diabète de type 2"
+    },
+    {
+      "id": "6",
+      "nom": "Amlodipine 5mg",
+      "reference": "MED006",
+      "categorie": "Antihypertenseur",
+      "prix": 45,
+      "quantite": 60,
+      "seuilAlerte": 10,
+      "dateExpiration": "2027-03-15",
+      "fournisseurId": "3",
+      "ordonnanceRequise": true,
+      "description": "Traitement de l'hypertension artérielle"
+    },
+    {
+      "id": "7",
+      "nom": "Oméprazole 20mg",
+      "reference": "MED007",
+      "categorie": "Gastrique",
+      "prix": 32,
+      "quantite": 5,
+      "seuilAlerte": 10,
+      "dateExpiration": "2026-05-20",
+      "fournisseurId": "1",
+      "ordonnanceRequise": false,
+      "description": "Inhibiteur de la pompe à protons"
+    },
+    {
+      "id": "8",
+      "nom": "Cetirizine 10mg",
+      "reference": "MED008",
+      "categorie": "Antihistaminique",
+      "prix": 15,
+      "quantite": 120,
+      "seuilAlerte": 20,
+      "dateExpiration": "2027-06-30",
+      "fournisseurId": "2",
+      "ordonnanceRequise": false,
+      "description": "Antihistaminique contre les allergies"
+    },
+    {
+      "id": "9",
+      "nom": "Aspirine 500mg",
+      "reference": "MED009",
+      "categorie": "Analgésique",
+      "prix": 10,
+      "quantite": 180,
+      "seuilAlerte": 25,
+      "dateExpiration": "2026-10-15",
+      "fournisseurId": "4",
+      "ordonnanceRequise": false,
+      "description": "Antidouleur et anti-inflammatoire"
+    },
+    {
+      "id": "10",
+      "nom": "Azithromycine 500mg",
+      "reference": "MED010",
+      "categorie": "Antibiotique",
+      "prix": 55,
+      "quantite": 12,
+      "seuilAlerte": 15,
+      "dateExpiration": "2025-09-01",
+      "fournisseurId": "3",
+      "ordonnanceRequise": true,
+      "description": "Antibiotique macrolide"
+    },
+    {
+      "id": "11",
+      "nom": "Vitamine D3 1000UI",
+      "reference": "MED011",
+      "categorie": "Vitamines",
+      "prix": 25,
+      "quantite": 90,
+      "seuilAlerte": 20,
+      "dateExpiration": "2027-08-20",
+      "fournisseurId": "4",
+      "ordonnanceRequise": false,
+      "description": "Supplément en vitamine D"
+    },
+    {
+      "id": "12",
+      "nom": "Loratadine 10mg",
+      "reference": "MED012",
+      "categorie": "Antihistaminique",
+      "prix": 18,
+      "quantite": 75,
+      "seuilAlerte": 15,
+      "dateExpiration": "2026-11-30",
+      "fournisseurId": "1",
+      "ordonnanceRequise": false,
+      "description": "Antihistaminique non sédatif"
+    },
+    {
+      "nom": "Diclofénac 50mg",
+      "reference": "MED013",
+      "categorie": "Anti-inflammatoire",
+      "fournisseurId": "2",
+      "prix": 20,
+      "quantite": 10,
+      "seuilAlerte": 10,
+      "dateExpiration": "2025-03-10",
+      "description": "Anti-inflammatoire puissant",
+      "ordonnanceRequise": true,
+      "id": "13"
+    },
+    {
+      "id": "14",
+      "nom": "Magnésium B6",
+      "reference": "MED014",
+      "categorie": "Vitamines",
+      "prix": 30,
+      "quantite": 110,
+      "seuilAlerte": 20,
+      "dateExpiration": "2027-04-15",
+      "fournisseurId": "4",
+      "ordonnanceRequise": false,
+      "description": "Complément en magnésium et vitamine B6"
+    },
+    {
+      "id": "15",
+      "nom": "Pantoprazole 40mg",
+      "reference": "MED015",
+      "categorie": "Gastrique",
+      "prix": 38,
+      "quantite": 45,
+      "seuilAlerte": 10,
+      "dateExpiration": "2026-07-25",
+      "fournisseurId": "3",
+      "ordonnanceRequise": false,
+      "description": "Traitement des ulcères gastriques"
+    }
+  ],
+  "fournisseurs": [
+    {
+      "id": "1",
+      "nom": "PharmaCo Maroc",
+      "telephone": "0661234567",
+      "email": "contact@pharmaco.ma",
+      "adresse": "Boulevard Mohammed V, Casablanca",
+      "ville": "Casablanca"
+    },
+    {
+      "id": "2",
+      "nom": "MediSupply",
+      "telephone": "0672345678",
+      "email": "info@medisupply.ma",
+      "adresse": "Avenue Hassan II, Rabat",
+      "ville": "Rabat"
+    },
+    {
+      "id": "3",
+      "nom": "SantéPlus",
+      "telephone": "0655678901",
+      "email": "contact@santeplus.ma",
+      "adresse": "Rue Ibn Sina, Meknès",
+      "ville": "Meknès"
+    },
+    {
+      "id": "4",
+      "nom": "PharmaDistrib",
+      "telephone": "0644321098",
+      "email": "info@pharmadistrib.ma",
+      "adresse": "Avenue Mohamed VI, Fès",
+      "ville": "Fès"
+    },
+    {
+      "id": "5",
+      "nom": "MédiMaroc",
+      "telephone": "0633210987",
+      "email": "contact@medimaroc.ma",
+      "adresse": "Rue de la Liberté, Marrakech",
+      "ville": "Marrakech"
+    }
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "nom": "Ahmed Benali",
+      "telephone": "0612345678",
+      "email": "ahmed@gmail.com",
+      "dateNaissance": "1985-03-15"
+    },
+    {
+      "nom": "Fatima Zahra",
+      "telephone": "0623456789",
+      "email": "fatima@gmail.com",
+      "dateNaissance": "1990-07-22",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "nom": "Mohammed Alaoui",
+      "telephone": "0634567890",
+      "email": "mohammed@gmail.com",
+      "dateNaissance": "1978-11-05"
+    },
+    {
+      "id": "4",
+      "nom": "Khadija Mansouri",
+      "telephone": "0645678901",
+      "email": "khadija@gmail.com",
+      "dateNaissance": "1995-02-18"
+    },
+    {
+      "id": "5",
+      "nom": "Youssef Tazi",
+      "telephone": "0656789012",
+      "email": "youssef@gmail.com",
+      "dateNaissance": "1982-08-30"
+    },
+    {
+      "id": "6",
+      "nom": "Nadia Chraibi",
+      "telephone": "0667890123",
+      "email": "nadia@gmail.com",
+      "dateNaissance": "1993-05-12"
+    },
+    {
+      "nom": "Ali Benjelloun",
+      "telephone": "0678901234",
+      "email": "ali@gmail.com",
+      "dateNaissance": "1970-12-25",
+      "id": "7"
+    },
+    {
+      "id": "8",
+      "nom": "Samira Idrissi",
+      "telephone": "0689012345",
+      "email": "samira@gmail.com",
+      "dateNaissance": "1988-09-08"
+    }
+  ],
+  "ventes": [
+    {
+      "id": "2",
+      "clientId": 2,
+      "clientNom": "Fatima Zahra",
+      "date": "2025-02-10",
+      "total": 35,
+      "ordonnance": true,
+      "lignesVente": [
+        {
+          "medicamentId": 2,
+          "medicamentNom": "Amoxicilline 500mg",
+          "quantite": 1,
+          "prixUnitaire": 35
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "clientId": 1,
+      "clientNom": "Ahmed Benali",
+      "date": "2025-02-20",
+      "total": 44,
+      "ordonnance": false,
+      "lignesVente": [
+        {
+          "medicamentId": 4,
+          "medicamentNom": "Ibuprofène 400mg",
+          "quantite": 2,
+          "prixUnitaire": 22
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "clientId": 2,
+      "clientNom": "Fatima Zahra",
+      "date": "2025-03-05",
+      "total": 87.5,
+      "ordonnance": false,
+      "lignesVente": [
+        {
+          "medicamentId": 1,
+          "medicamentNom": "Doliprane 1000mg",
+          "quantite": 3,
+          "prixUnitaire": 12.5
+        },
+        {
+          "medicamentId": 3,
+          "medicamentNom": "Vitamine C 500mg",
+          "quantite": 2,
+          "prixUnitaire": 18
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "clientId": 1,
+      "clientNom": "Ahmed Benali",
+      "date": "2025-04-12",
+      "total": 72,
+      "ordonnance": false,
+      "lignesVente": [
+        {
+          "medicamentId": 3,
+          "medicamentNom": "Vitamine C 500mg",
+          "quantite": 4,
+          "prixUnitaire": 18
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "clientId": 2,
+      "clientNom": "Fatima Zahra",
+      "date": "2025-05-08",
+      "total": 57,
+      "ordonnance": true,
+      "lignesVente": [
+        {
+          "medicamentId": 2,
+          "medicamentNom": "Amoxicilline 500mg",
+          "quantite": 1,
+          "prixUnitaire": 35
+        },
+        {
+          "medicamentId": 1,
+          "medicamentNom": "Doliprane 1000mg",
+          "quantite": 1,
+          "prixUnitaire": 12.5
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "clientId": 1,
+      "clientNom": "Ahmed Benali",
+      "date": "2025-06-20",
+      "total": 90,
+      "ordonnance": false,
+      "lignesVente": [
+        {
+          "medicamentId": 3,
+          "medicamentNom": "Vitamine C 500mg",
+          "quantite": 5,
+          "prixUnitaire": 18
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "clientId": 2,
+      "clientNom": "Fatima Zahra",
+      "date": "2025-07-14",
+      "total": 44,
+      "ordonnance": false,
+      "lignesVente": [
+        {
+          "medicamentId": 4,
+          "medicamentNom": "Ibuprofène 400mg",
+          "quantite": 2,
+          "prixUnitaire": 22
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "clientId": 1,
+      "clientNom": "Ahmed Benali",
+      "date": "2025-08-03",
+      "total": 105,
+      "ordonnance": false,
+      "lignesVente": [
+        {
+          "medicamentId": 1,
+          "medicamentNom": "Doliprane 1000mg",
+          "quantite": 5,
+          "prixUnitaire": 12.5
+        },
+        {
+          "medicamentId": 3,
+          "medicamentNom": "Vitamine C 500mg",
+          "quantite": 2,
+          "prixUnitaire": 18
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "clientId": 2,
+      "clientNom": "Fatima Zahra",
+      "date": "2025-09-18",
+      "total": 70,
+      "ordonnance": true,
+      "lignesVente": [
+        {
+          "medicamentId": 2,
+          "medicamentNom": "Amoxicilline 500mg",
+          "quantite": 2,
+          "prixUnitaire": 35
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "clientId": 1,
+      "clientNom": "Ahmed Benali",
+      "date": "2025-10-25",
+      "total": 62.5,
+      "ordonnance": false,
+      "lignesVente": [
+        {
+          "medicamentId": 1,
+          "medicamentNom": "Doliprane 1000mg",
+          "quantite": 5,
+          "prixUnitaire": 12.5
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "clientId": 2,
+      "clientNom": "Fatima Zahra",
+      "date": "2025-11-10",
+      "total": 118,
+      "ordonnance": false,
+      "lignesVente": [
+        {
+          "medicamentId": 3,
+          "medicamentNom": "Vitamine C 500mg",
+          "quantite": 4,
+          "prixUnitaire": 18
+        },
+        {
+          "medicamentId": 4,
+          "medicamentNom": "Ibuprofène 400mg",
+          "quantite": 2,
+          "prixUnitaire": 22
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "clientId": 1,
+      "clientNom": "Ahmed Benali",
+      "date": "2025-12-05",
+      "total": 95,
+      "ordonnance": false,
+      "lignesVente": [
+        {
+          "medicamentId": 1,
+          "medicamentNom": "Doliprane 1000mg",
+          "quantite": 3,
+          "prixUnitaire": 12.5
+        },
+        {
+          "medicamentId": 3,
+          "medicamentNom": "Vitamine C 500mg",
+          "quantite": 2,
+          "prixUnitaire": 18
+        },
+        {
+          "medicamentId": 4,
+          "medicamentNom": "Ibuprofène 400mg",
+          "quantite": 1,
+          "prixUnitaire": 22
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "nom": "Analgésique"
+    },
+    {
+      "id": "2",
+      "nom": "Antibiotique"
+    },
+    {
+      "id": "3",
+      "nom": "Anti-inflammatoire"
+    },
+    {
+      "id": "4",
+      "nom": "Vitamines"
+    },
+    {
+      "id": "5",
+      "nom": "Antidiabétique"
+    },
+    {
+      "id": "6",
+      "nom": "Antihypertenseur"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@pharmacie.ma",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ]
+}
