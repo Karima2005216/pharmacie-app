@@ -15,7 +15,7 @@ export interface User {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'http://https://https://pharmacie-backend-gvw3.vercel.app/users';
+  private apiUrl ='https://pharmacie-backend-gvw3.vercel.app/users';
 
   // ─── Signals ──────────────────────────────────────
   private _isLoggedIn = signal(false);
