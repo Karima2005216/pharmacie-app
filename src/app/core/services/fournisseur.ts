@@ -8,7 +8,7 @@ import { Fournisseur } from '../models/fournisseur';
 
 @Injectable({ providedIn: 'root' })
 export class FournisseurService {
-  private apiUrl = 'http://localhost:3000/fournisseurs';
+  private apiUrl = 'http://https://https://pharmacie-backend-gvw3.vercel.app/fournisseurs';
 
   constructor(private http: HttpClient) {}
 

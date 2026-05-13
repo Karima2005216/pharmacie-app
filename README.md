@@ -54,7 +54,7 @@ ng serve --open
 | Service | URL |
 |---|---|
 | Application | http://localhost:4200 |
-| API REST | http://localhost:3000 |
+| API REST | http://https://https://pharmacie-backend-gvw3.vercel.app |
 
 ### Compte de test
 | Champ | Valeur |

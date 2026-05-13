@@ -8,7 +8,7 @@ import { Client } from '../models/client';
 
 @Injectable({ providedIn: 'root' })
 export class ClientService {
-  private apiUrl = 'http://localhost:3000/clients';
+  private apiUrl = 'http://https://https://pharmacie-backend-gvw3.vercel.app/clients';
 
   constructor(private http: HttpClient) {}
 
