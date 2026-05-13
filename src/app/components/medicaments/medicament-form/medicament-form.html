@@ -1,0 +1,97 @@
+// =============================================
+// FICHIER: src/app/components/fournisseurs/fournisseur-list/fournisseur-list.ts
+// =============================================
+import { Component, OnInit, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { FournisseurService } from '../../../core/services/fournisseur.service';
+import { Fournisseur } from '../../../core/models/fournisseur.model';
+
+@Component({
+  selector: 'app-fournisseur-list',
+  standalone: true,
+  imports: [RouterLink, FormsModule],
+  template: `
+    <div class="page">
+      <div class="page-header">
+        <h1>🏭 Fournisseurs</h1>
+        <a routerLink="/fournisseurs/nouveau" class="btn-primary">+ Ajouter</a>
+      </div>
+
+      <input [(ngModel)]="search" (ngModelChange)="filter()"
+        placeholder="🔍 Rechercher un fournisseur..."
+        class="search-input" />
+
+      <div class="cards-grid">
+        @for (f of filtered(); track f.id) {
+          <div class="card">
+            <div class="card-header">
+              <span class="card-icon">🏭</span>
+              <strong>{{ f.nom }}</strong>
+            </div>
+            <div class="card-body">
+              <p>📞 {{ f.telephone }}</p>
+              <p>📧 {{ f.email }}</p>
+              <p>📍 {{ f.ville }}</p>
+              <p class="address">{{ f.adresse }}</p>
+            </div>
+            <div class="card-actions">
+              <a [routerLink]="['/fournisseurs', f.id, 'edit']" class="btn-edit">✏️ Modifier</a>
+              <button (click)="delete(f.id!)" class="btn-delete">🗑 Supprimer</button>
+            </div>
+          </div>
+        } @empty {
+          <p class="empty">Aucun fournisseur trouvé</p>
+        }
+      </div>
+    </div>
+  `,
+  styles: [`
+    .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    h1 { color: #1a237e; }
+    .btn-primary { background: #1976d2; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    .search-input { width: 100%; padding: 0.7rem 1rem; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.95rem; box-sizing: border-box; }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1.2rem; }
+    .card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+    .card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .card-icon { font-size: 1.8rem; }
+    .card-body p { margin: 0.35rem 0; color: #555; font-size: 0.9rem; }
+    .address { color: #999 !important; font-size: 0.8rem !important; }
+    .card-actions { display: flex; gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #f0f0f0; }
+    .btn-edit { background: #fff9c4; padding: 0.4rem 0.8rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem; }
+    .btn-delete { background: #ffebee; padding: 0.4rem 0.8rem; border-radius: 6px; border: none; cursor: pointer; font-size: 0.85rem; }
+    .empty { color: #999; text-align: center; padding: 3rem; font-size: 1rem; }
+  `]
+})
+export class FournisseurListComponent implements OnInit {
+  all: Fournisseur[] = [];
+  filtered = signal<Fournisseur[]>([]);
+  search = '';
+
+  constructor(private fournisseurService: FournisseurService) {}
+
+  ngOnInit(): void {
+    this.fournisseurService.getAll().subscribe(data => {
+      this.all = data;
+      this.filtered.set(data);
+    });
+  }
+
+  filter(): void {
+    this.filtered.set(
+      this.all.filter(f =>
+        f.nom.toLowerCase().includes(this.search.toLowerCase()) ||
+        f.ville.toLowerCase().includes(this.search.toLowerCase())
+      )
+    );
+  }
+
+  delete(id: number): void {
+    if (confirm('Supprimer ce fournisseur ?')) {
+      this.fournisseurService.delete(id).subscribe(() => {
+        this.all = this.all.filter(f => f.id !== id);
+        this.filter();
+      });
+    }
+  }
+}

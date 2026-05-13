@@ -1,0 +1,92 @@
+<div class="page-container">
+
+  <div class="page-header">
+    <span class="header-icon">⚙️</span>
+    <h1>{{ lang().parametresCompte }}</h1>
+  </div>
+
+  <div class="user-card">
+    <div class="user-avatar">👤</div>
+    <div class="user-info">
+      <span class="user-name">{{ currentUser.username }}</span>
+      <span class="user-role">{{ currentUser.role }}</span>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-icon">✉️</span>
+      <div>
+        <h2>{{ lang().modifierEmail }}</h2>
+        <p class="current-value">{{ lang().actuel }} : {{ currentUser.email || lang().nonDefini }}</p>
+      </div>
+    </div>
+
+    <form [formGroup]="emailForm" (ngSubmit)="onUpdateEmail()">
+      <div class="form-group">
+        <label>{{ lang().nouvelEmail }}</label>
+        <input
+          formControlName="email"
+          type="email"
+          placeholder="exemple@pharmacie.ma" />
+        @if (emailForm.get('email')?.hasError('required') && emailForm.get('email')?.touched) {
+          <span class="error">{{ lang().emailRequis }}</span>
+        }
+        @if (emailForm.get('email')?.hasError('email') && emailForm.get('email')?.touched) {
+          <span class="error">{{ lang().formatInvalide }}</span>
+        }
+      </div>
+      <button type="submit" [disabled]="emailForm.invalid" class="btn-primary">
+        💾 {{ lang().enregistrer }}
+      </button>
+    </form>
+  </div>
+
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-icon">🔒</span>
+      <div>
+        <h2>{{ lang().modifierMotDePasse }}</h2>
+      </div>
+    </div>
+
+    <form [formGroup]="passwordForm" (ngSubmit)="onUpdatePassword()">
+      <div class="form-group">
+        <label>{{ lang().nouveauMotDePasse }}</label>
+        <div class="input-wrapper">
+          <input
+            formControlName="newPassword"
+            [type]="hideNew ? 'password' : 'text'"
+            [placeholder]="lang().minimum6" />
+          <button type="button" class="toggle-btn" (click)="hideNew = !hideNew">
+            {{ hideNew ? '👁' : '👁' }}
+          </button>
+        </div>
+        @if (passwordForm.get('newPassword')?.hasError('minlength') && passwordForm.get('newPassword')?.touched) {
+          <span class="error">{{ lang().minimum6Requis }}</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label>{{ lang().confirmerMotDePasse }}</label>
+        <div class="input-wrapper">
+          <input
+            formControlName="confirmPassword"
+            [type]="hideConfirm ? 'password' : 'text'"
+            [placeholder]="lang().repeterMotDePasse" />
+          <button type="button" class="toggle-btn" (click)="hideConfirm = !hideConfirm">
+            {{ hideConfirm ? '👁' : '👁' }}
+          </button>
+        </div>
+        @if (passwordForm.hasError('mismatch') && passwordForm.get('confirmPassword')?.dirty) {
+          <span class="error">{{ lang().motDePasseNonCorrespondant }}</span>
+        }
+      </div>
+
+      <button type="submit" [disabled]="passwordForm.invalid" class="btn-accent">
+        🔄 {{ lang().mettreAJour }}
+      </button>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="medicines-grid">
+  
+  <mat-card *ngFor="let med of medicines" class="medicine-card" appearance="outline">
+    <mat-card-header>
+      <div mat-card-avatar class="medicine-icon">
+        <mat-icon>medication</mat-icon>
+      </div>
+      <mat-card-title>{{ med.name }}</mat-card-title>
+      <mat-card-subtitle>{{ med.brand }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="info-row">
+        <span class="label">Expiry:</span>
+        <span class="value">{{ med.expiry | date }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Stock:</span>
+
+        <span [ngClass]="getStockClass(med.status)">{{ med.stock }} Units</span>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-button color="primary">Details</button>
+      <button mat-raised-button color="primary">Edit</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
