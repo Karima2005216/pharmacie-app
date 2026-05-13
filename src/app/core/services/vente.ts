@@ -8,7 +8,7 @@ import { Vente } from '../models/vente';
 
 @Injectable({ providedIn: 'root' })
 export class VenteService {
-  private apiUrl = 'http://localhost:3000/ventes';
+  private apiUrl = 'http://https://pharmacie-backend-kappa.vercel.app/ventes';
 
   constructor(private http: HttpClient) {}
 
