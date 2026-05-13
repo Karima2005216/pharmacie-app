@@ -14,7 +14,7 @@ import { Medicament } from '../models/medicament';
 export class MedicamentService {
 
   // URL de base de l'API REST (json-server)
-  private apiUrl = 'http://https://https://pharmacie-backend-gvw3.vercel.app/medicaments';
+  private apiUrl = 'https://pharmacie-backend-gvw3.vercel.app/medicaments';
 
   // ─── Signals ──────────────────────────────────────────────────────────────
 

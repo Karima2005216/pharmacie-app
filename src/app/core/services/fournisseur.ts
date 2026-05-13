@@ -8,7 +8,7 @@ import { Fournisseur } from '../models/fournisseur';
 
 @Injectable({ providedIn: 'root' })
 export class FournisseurService {
-  private apiUrl = 'http://https://https://pharmacie-backend-gvw3.vercel.app/fournisseurs';
+  private apiUrl = 'https://pharmacie-backend-gvw3.vercel.app/fournisseurs';
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +17,7 @@ export class FournisseurService {
   }
 
   getById(id: number): Observable<Fournisseur> {
-    return this.http.get<Fournisseur>('${this.apiUrl}/${id}');
+    return this.http.get<Fournisseur>(`${this.apiUrl}/${id}`);
   }
 
   create(f: Fournisseur): Observable<Fournisseur> {
@@ -25,10 +25,10 @@ export class FournisseurService {
   }
 
   update(id: number, f: Fournisseur): Observable<Fournisseur> {
-    return this.http.put<Fournisseur>('${this.apiUrl}/${id}', f);
+    return this.http.put<Fournisseur>(`${this.apiUrl}/${id}`, f);
   }
 
   delete(id: number): Observable<void> {
-    return this.http.delete<void>('${this.apiUrl}/${id}');
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
